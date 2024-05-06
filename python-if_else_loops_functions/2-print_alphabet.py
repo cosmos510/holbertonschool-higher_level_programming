@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print(*["%c" % a for a in range(ord('a'),ord('z')+1)],sep='',end='')
+for alpha_letters in range(ord('a'), ord('z')+1):
+      print("{:c}".format(alpha_letters), end="")
