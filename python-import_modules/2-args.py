@@ -12,6 +12,5 @@ else:
     print("{} argument:".format(len(sys.argv) - 1))
 
 while i < len(sys.argv):
-    if len(sys.argv) > 1:
-        print("{}: {}".format(i, sys.argv[i]))
+    print("{}: {}".format(i, sys.argv[i]))
     i += 1
