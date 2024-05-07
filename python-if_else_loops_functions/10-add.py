@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 def add(a, b):
-    """function that add 2 number"""
+    """Return addition of a and b 2"""
     return (a + b)
