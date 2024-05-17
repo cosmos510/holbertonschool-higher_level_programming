@@ -8,7 +8,6 @@ class Square:
     """
     def __init__(self, size=0):
         """initiation of the class square with the size"""
-
         self.size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -55,4 +54,4 @@ class Square:
 
     def __le__(self, other):
         if isinstance(other, Square):
-            return (self.area() <= other.area())
+            return self.area() <= other.area()
