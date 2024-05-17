@@ -64,7 +64,7 @@ class Square:
             else:
                 str.append(" ")
         if self.__size == 0:
-            return("")
+            return ("")
         else:
             for y in range(self.__size):
                 str.append(" " * self.__position[0] + "#" * self.__size)
