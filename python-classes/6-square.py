@@ -48,11 +48,10 @@ class Square():
         self.__position = value
 
     def my_print(self):
-        for x in range(self.position[1]):
-            if self.__position[1] > 0:
+        if self.__position[1] > 0:
                 print("")
-            else:
-                print(" ")
+        for x in range(self.position[1] -1):
+            print(" ")
         if self.__size == 0:
             print("")
         else:
