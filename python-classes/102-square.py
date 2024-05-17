@@ -35,11 +35,11 @@ class Square:
 
     def __eq__(self, other):
         if isinstance(other, Square):
-            return(self.area() == other.area())
+            return (self.area() == other.area())
 
     def __gt__(self, other):
         if isinstance(other, Square):
-            return(self.area() > other.area())
+            return (self.area() > other.area())
 
     def __lt__(self, other):
         if isinstance(other, Square):
@@ -47,12 +47,12 @@ class Square:
 
     def __ne__(self, other):
         if isinstance(other, Square):
-            return(self.area() != other.area())
+            return (self.area() != other.area())
 
     def __ge__(self, other):
         if isinstance(other, Square):
-            return(self.area() >= other.area())
+            return (self.area() >= other.area())
 
     def __le__(self, other):
         if isinstance(other, Square):
-            return(self.area() <= other.area())
+            return (self.area() <= other.area())
