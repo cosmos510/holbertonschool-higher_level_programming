@@ -9,8 +9,12 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for let in text:
-        if let in ".?:":
-            print("{}\n".format(let))
-        else:
-            print("{}".format(let), end='')
+    skip_space = False
+    for let in range(len(text)):
+        if skip_space and text[let] == ' ':
+            continue
+        skip_space = False
+        print("{}".format(text[let]), end='')
+        if text[let] in ".?:":
+            print("\n")
+            skip_space = True
