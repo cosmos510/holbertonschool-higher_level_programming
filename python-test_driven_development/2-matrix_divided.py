@@ -16,6 +16,12 @@ def matrix_divided(matrix, div):
     Returns:
         A new matrix representing the result of the division.
     """
+
+    for row in matrix:
+        for j in row:
+            if not isinstance(j, int) and not isinstance(j, int):
+                raise TypeError(
+                    "matrix must be a matrix (list of lists) of integers/floats")
     for row in matrix:
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
