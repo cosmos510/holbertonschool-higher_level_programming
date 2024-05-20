@@ -45,3 +45,11 @@ TypeError: div must be a number
 ... ]
 >>> print(matrix_divided(matrix, float('inf')))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix))
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
