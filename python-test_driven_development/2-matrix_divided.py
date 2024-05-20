@@ -5,7 +5,7 @@
 def matrix_divided(matrix, div):
     """
         function that divides all elements of a matrix.
-         Args:
+        Args:
         matrix (list): A list of lists of ints or floats.
         div (int/float): The divisor.
     Raises:

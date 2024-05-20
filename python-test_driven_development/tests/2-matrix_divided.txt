@@ -38,3 +38,10 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> print(matrix_divided(matrix, "test"))
 Traceback (most recent call last):
 TypeError: div must be a number
+
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix, float('inf')))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
