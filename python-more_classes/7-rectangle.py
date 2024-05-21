@@ -10,7 +10,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    print_symbole = "#"
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -55,10 +55,10 @@ class Rectangle:
         rect = []
         for i in range(self.__height):
             for j in range(self.__width):
-                rect.append(self.print_symbole)
+                rect.append(self.print_symbol)
             if i != self.__height - 1:
                 rect.append("\n")
-        return ("".join(rect))
+        return "".join(rect)
 
     def __repr__(self):
         return ("Rectangle({}, {})".format(self.__width, self.__height))
