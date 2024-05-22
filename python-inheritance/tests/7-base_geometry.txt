@@ -65,6 +65,8 @@
 Traceback (most recent call last):
 Exception: area() is not implemented
 
->>> bg.integer_validator("age", None)
-Traceback (most recent call last):
+>>> try:
+...    bg.integer_validator("age", None)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
