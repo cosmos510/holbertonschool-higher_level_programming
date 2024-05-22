@@ -62,3 +62,7 @@ TypeError: another invalid must be an integer
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: absolutely every possible invalid must be an integer
