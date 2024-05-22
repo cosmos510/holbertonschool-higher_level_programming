@@ -49,7 +49,9 @@
 ...    print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
 
->>> bg.integer_validator("age", True)
+>>> bg.integer_validator("another invalid", True)
+Traceback (most recent call last):
+TypeError: another invalid must be an integer
 
 >>> try:
 ...    bg.integer_validator("age", {3, 4})
