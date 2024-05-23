@@ -27,7 +27,6 @@ class VerboseList(list):
         print("Extended the list with [{}] items.".format(count))
         return super().extend(iterable)
 
-    
     def pop(self, index: SupportsIndex = -1):
         popped = super().pop(index)
         print("Popped [{}] from the list".format(popped))
