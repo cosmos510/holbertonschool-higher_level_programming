@@ -14,14 +14,15 @@ class CountedIterator:
     """
 
     def __init__(self, data):
-        self.itera_obj = data
+        self.itera_obj = iter(data)
         CountedIterator.counter = 0
 
     def get_count(self):
         return self.counter
 
     def __next__(self):
+        item = next(self.itera_obj)
         self.counter += 1
-        if self.counter > len(self.itera_obj):
+        if self.counter == 0:
             raise StopIteration
-        return self.itera_obj[self.counter - 1]
+        return item
