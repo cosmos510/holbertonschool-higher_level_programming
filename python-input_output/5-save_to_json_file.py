@@ -2,7 +2,7 @@
 """
     Module that create a function save_to_json
 """
-from json import dumps
+import json
 
 
 def save_to_json_file(my_obj, filename):
@@ -11,4 +11,4 @@ def save_to_json_file(my_obj, filename):
         using a JSON representation
     """
     with open(filename, 'w', encoding="utf-8") as my_file:
-        my_file.write(dumps(my_obj))
+        json.dump(my_obj, my_file)
