@@ -27,7 +27,9 @@ class Student:
         """
         if isinstance(attrs, list) and all(isinstance(ele, str)
                                            for ele in attrs):
-            for ele in attrs:
-                if hasattr(self, ele):
-                    return {ele: getattr(self, ele)}
+            result = {}
+            for key in attrs:
+                if hasattr(self, key):
+                    result[key] = getattr(self, key)
+            return result
         return self.__dict__
