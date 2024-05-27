@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 """
     Module that create function from_json_string
 """
@@ -10,5 +10,4 @@ def from_json_string(my_str):
         function that returns an object
         (Python data structure) represented by a JSON string
     """
-    x = JSONDecoder().decode(my_str)
-    return x
+    return JSONDecoder().decode(my_str)
