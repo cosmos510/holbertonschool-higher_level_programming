@@ -10,4 +10,5 @@ def from_json_string(my_str):
         function that returns an object
         (Python data structure) represented by a JSON string
     """
-    return JSONDecoder().decode(my_str)
+    x = JSONDecoder().decode(my_str)
+    return x
