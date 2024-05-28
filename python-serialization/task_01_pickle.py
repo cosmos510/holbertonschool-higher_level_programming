@@ -11,7 +11,7 @@ class CustomObject:
         Class that define a custom object
     """
 
-    def __init__(self, name, age, is_student):
+    def __init__(self, name: str, age: int, is_student: bool):
         """
         Initializes a Object
         Args:
