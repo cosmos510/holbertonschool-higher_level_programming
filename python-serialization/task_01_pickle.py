@@ -29,10 +29,14 @@ class CustomObject:
         print("Is Student: {}".format(self.is_student))
 
     def serialize(self, filename):
+        if not filename:
+            return None
         with open(filename, 'wb') as file:
             pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
+        if not filename:
+            return None
         with open(filename, 'rb') as file:
             return pickle.load(file)
