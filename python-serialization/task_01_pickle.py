@@ -24,11 +24,19 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
+        """
+            function that display the object's attribute
+        """
         print("Name: {}".format(self.name))
         print("Age: {}".format(self.age))
         print("Is Student: {}".format(self.is_student))
 
     def serialize(self, filename):
+        """
+            This method will take a filename as its parameter.
+            Using the pickle module, it will serialize the current instance
+            of the object and save it to the provided filename
+        """
         if not filename:
             return None
         with open(filename, 'wb') as file:
@@ -36,6 +44,11 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
+        """
+            This class method will take a filename as its parameter.
+            Using the pickle module, it will load and return an instance
+            of the CustomObject from the provided filename.
+        """
         if not filename:
             return None
         with open(filename, 'rb') as file:
