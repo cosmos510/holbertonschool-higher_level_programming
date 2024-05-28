@@ -37,10 +37,11 @@ class CustomObject:
             Using the pickle module, it will serialize the current instance
             of the object and save it to the provided filename
         """
-        if not filename:
+        try:
+            with open(filename, 'wb') as file:
+                pickle.dump(self, file)
+        except Exception:
             return None
-        with open(filename, 'wb') as file:
-            pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
@@ -49,7 +50,8 @@ class CustomObject:
             Using the pickle module, it will load and return an instance
             of the CustomObject from the provided filename.
         """
-        if not filename:
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except Exception:
             return None
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
