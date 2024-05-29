@@ -11,6 +11,7 @@ def start_server():
         start a server on localhost
     """
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        print("Received Dictionary from Client:")
         s.bind(('localhost', 1245))
         s.listen(1)
         conn, addr = s.accept()
@@ -21,6 +22,7 @@ def start_server():
                 data = conn.recv(1024)
                 if not data:
                     break
+                
                 print(data.decode('utf-8'))
 
 def send_data(data):
