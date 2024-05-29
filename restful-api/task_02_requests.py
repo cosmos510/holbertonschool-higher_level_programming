@@ -20,7 +20,8 @@ def fetch_and_save_posts():
     response = requests.get(url)
     posts = response.json()
     with open("posts.csv", "w") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        fieldnames = ['userId', 'body', 'id', 'title']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
         for post in posts:
-            writer.writerow(
-                [post.get("userId"), post.get("id"), post.get("title")])
+            writer.writerow(post)
