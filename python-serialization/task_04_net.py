@@ -12,12 +12,16 @@ def start_server():
     """
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(('localhost', 1245))
-        s.listen()
+        s.listen(1)
         conn, addr = s.accept()
         with conn:
             data = conn.recv(1024)
-            print(data.decode('utf-8'))
-
+            print(json.loads(data.decode('utf-8')))
+            while True:
+                data = conn.recv(1024)
+                if not data:
+                    break
+                print(data.decode('utf-8'))
 
 def send_data(data):
     """
@@ -26,4 +30,4 @@ def send_data(data):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect(('localhost', 1245))
         s.sendall(json.dumps(data).encode('utf-8'))
-        s.send("closed".encode("utf-8"))
+        s.close()
