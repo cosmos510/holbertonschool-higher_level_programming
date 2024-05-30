@@ -18,9 +18,19 @@ def fetch_and_save_posts():
     """ Fetches posts from a RESTful API and saves them to a file """
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
-    posts = response.json()
-    with open("posts.csv", "w") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+    if response.status_code == 200:
+        posts = response.json()
+        post_list = []
         for post in posts:
-            writer.writerow([post.get("id"),
-                             post.get("title"), post.get("body")])
+            post_dict = {
+                "id": post.get("id"),
+                "title": post.get("title"),
+                "body": post.get("body")
+            }
+            post_list.append(post_dict)
+            with open('posts.csv', 'w', newline='') as csvfile:
+                fieldnames = ['id', 'title', 'body']
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(post_list)
+                print(post_list)
