@@ -1,0 +1,41 @@
+# Make a GET request to an API endpoint
+curl -X GET https://api.example.com/endpoint
+
+# Make a POST request with JSON data
+curl -X POST -H "Content-Type: application/json" -d '{"key": "value"}' https://api.example.com/endpoint
+
+# Make a PUT request with custom headers
+curl -X PUT -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"key": "value"}' https://api.example.com/endpoint
+
+# Make a DELETE request
+curl -X DELETE https://api.example.com/endpoint
+
+By default the response headers are hidden in the output of curl. To show them, use the i option:
+
+Using the I option, you can get only the headers, and not the response body:
+
+The -d flag allows you to pass data in your request
+
+-X or --request: Specifies the HTTP request method. Example: -X GET or --request POST
+
+-H or --header: Adds a custom header to the request. Example: -H "Content-Type: application/json"
+
+-d or --data: Sends data in the request body. Example: -d '{"key": "value"}'
+
+-i or --include: Shows the response headers in the output. Example: -i
+
+-I or --head: Retrieves only the response headers, not the body. Example: -I
+
+-u or --user: Specifies the username and password for authentication. Example: -u username:password
+
+-L or --location: Follows redirects. Example: -L
+
+-o or --output: Writes the response body to a file. Example: -o response.txt
+
+-s or --silent: Suppresses the progress meter and error messages. Example: -s
+
+-v or --verbose: Provides detailed information about the request and response. Example: -v
+
+These are just a few examples of the flags you can use with curl. You can combine multiple flags to customize your requests according to your needs.
+
+can you show me all flag with curl with example

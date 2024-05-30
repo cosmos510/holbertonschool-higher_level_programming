@@ -1,0 +1,82 @@
+HTTP (HyperText Transfer Protocol) and HTTPS (HyperText Transfer Protocol Secure) are protocols used for transmitting data over the internet. Here are the key differences between them:
+
+Security:
+
+HTTP: Data transmitted using HTTP is not encrypted, which makes it vulnerable to interception and tampering by malicious actors.
+HTTPS: Data transmitted using HTTPS is encrypted using SSL (Secure Sockets Layer) or TLS (Transport Layer Security), providing a secure connection. This encryption ensures data integrity and confidentiality, protecting it from interception and tampering.
+Port Number:
+
+HTTP: Uses port 80 by default.
+HTTPS: Uses port 443 by default.
+URL Prefix:
+
+HTTP: URLs start with http://.
+HTTPS: URLs start with https://.
+Certificate Requirement:
+
+HTTP: Does not require a certificate.
+HTTPS: Requires an SSL/TLS certificate issued by a trusted Certificate Authority (CA) to authenticate the server and establish a secure connection.
+Performance:
+
+HTTP: Generally faster because it doesn't involve the overhead of encryption and decryption processes.
+HTTPS: Slightly slower due to the additional computational load of encryption and decryption, although modern advancements have minimized this difference.
+SEO Impact:
+
+HTTP: Websites using HTTP may be penalized by search engines and can appear lower in search rankings.
+HTTPS: Websites using HTTPS are favored by search engines and may rank higher, as HTTPS is considered a signal for website security and reliability.
+User Trust:
+
+HTTP: Browsers often mark HTTP sites as "Not Secure," which can deter users from entering sensitive information.
+HTTPS: Browsers display a padlock icon in the address bar for HTTPS sites, indicating a secure connection, which builds user trust.
+In summary, HTTPS is a secure version of HTTP that encrypts data to protect it during transmission, while HTTP does not offer such security measures. The use of HTTPS is crucial for protecting sensitive information and maintaining user trust in online interactions.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+HTTP Request Structure:
+1. Request Line: Contains the HTTP method (GET, POST, etc.), the path of the resource, and the HTTP version.
+2. Headers: Contains additional information about the request, such as the content type, cookies, and authentication credentials.
+3. Body (optional): Contains the data being sent with the request, such as form data or JSON payload.
+
+HTTP Response Structure:
+1. Status Line: Contains the HTTP version, status code, and status message.
+2. Headers: Contains additional information about the response, such as the content type, cookies, and caching directives.
+3. Body: Contains the data being sent back as a response, such as HTML content, JSON data, or file attachments.
+
+Example HTTP Request:
+GET /api/users HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Authorization: Bearer <token>
+
+Example HTTP Response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: no-cache
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com"
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Common HTTP Methods:
+- GET: Retrieves data from a specified resource. Use case: Fetching a web page or data from an API.
+- POST: Submits data to be processed to a specified resource. Use case: Creating a new resource or submitting a form.
+- PUT: Updates a specified resource with new data. Use case: Modifying an existing resource.
+- DELETE: Deletes a specified resource. Use case: Removing a resource from the server.
+
+Common HTTP Status Codes:
+- 200 OK: The request was successful. Use case: Retrieving data or completing a successful operation.
+- 201 Created: The request was successful, and a new resource was created. Use case: Creating a new resource.
+- 400 Bad Request: The server cannot process the request due to a client error. Use case: Invalid request or missing parameters.
+- 401 Unauthorized: The request requires user authentication. Use case: Accessing a protected resource without proper authentication.
+- 403 Forbidden: The server understands the request but refuses to authorize it. Use case: Accessing a resource that the user is not allowed to access.
+- 404 Not Found: The requested resource could not be found on the server. Use case: Accessing a non-existent resource.
+- 500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request. Use case: Server-side errors or exceptions.
+- 1xx informational response
+- 2xx success
+- 3xx redirection
+- 4xx client errors
+- 5xx server errors
