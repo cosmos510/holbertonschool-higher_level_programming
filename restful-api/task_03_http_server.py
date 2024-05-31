@@ -28,7 +28,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             data = {
                 "name": "John",
                 "age": 30,
-                "city'": 'New York'
+                "city": "New York"
             }
             self.wfile.write(json.dumps(data).encode("utf-8"))
         elif self.path == '/info':
