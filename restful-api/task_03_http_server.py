@@ -56,6 +56,7 @@ def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
     """ Function that run the server """
     server_address = ('localhost', 8000)
     httpd = server_class(server_address, handler_class)
+    print(f"Starting httpd server on port {port}")
     httpd.serve_forever()
 
 
