@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/user/bin/python3
 """ Module that makes a request to a RESTful API """
 import requests
 import csv
@@ -33,4 +33,4 @@ def fetch_and_save_posts():
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 writer.writerows(post_list)
-                print(post_list)
+
