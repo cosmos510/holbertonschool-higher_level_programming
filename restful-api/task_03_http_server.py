@@ -41,7 +41,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             }
             self.wfile.write(json.dumps(data).encode())
         else:
-            self.send_response(404)
+            self.send_error(404, 'Endpoint not found')
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(b'Endpoint not found!')
