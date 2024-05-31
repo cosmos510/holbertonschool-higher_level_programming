@@ -8,7 +8,12 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-user = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {
+    "jane": {
+        "username": "jane",
+        "name": "Jane",
+        "age": 28,
+        "city": "Los Angeles"}}
 
 
 @app.route('/')
@@ -32,15 +37,16 @@ def data():
     """
     Method that handle GET request
     """
-    return jsonify(list(user.keys()))
+    return jsonify(list(users.keys()))
 
 
-@app.route('/data/<string:username>')
+@app.route('/users/<string:username>')
 def user_data(username):
     """
     Method that handle GET request
     """
-    if username in user:
+    user = users.get(username)
+    if user:
         return jsonify(user)
     return jsonify({"error": "User not found"}), 404
 
@@ -50,8 +56,12 @@ def add_user():
     """
     Method that handle POST request
     """
-    user[request.json["name"].lower()] = request.json
-    return jsonify(user)
+    user_data = request.get_json()
+    username = user_data.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    users[username] = user_data
+    return jsonify({"message": "User added", "user": user_data}), 201
 
 
 if __name__ == "__main__":
