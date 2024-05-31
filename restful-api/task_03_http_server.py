@@ -51,7 +51,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
     """ Function that run the server """
-    server_address = ('', 8000)
+    server_address = ('localhost', 8000)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
 
