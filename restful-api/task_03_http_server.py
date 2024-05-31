@@ -52,11 +52,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b'404 Not Found')
 
 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
+def run(
+        server_class=HTTPServer,
+        handler_class=SimpleHTTPRequestHandler,
+        port=8000):
     """ Function that run the server """
     server_address = ('localhost', port)
     httpd = server_class(server_address, handler_class)
-    print(f"Starting httpd server on port {port}")
     httpd.serve_forever()
 
 
