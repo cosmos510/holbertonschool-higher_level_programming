@@ -36,7 +36,7 @@ def data():
 
 
 @app.route('/users/<string:username>')
-def user_data(username):
+def users_data(username):
     """
     Method that handle GET request
     """
