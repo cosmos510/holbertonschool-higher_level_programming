@@ -1,0 +1,26 @@
+version: '3'
+services:
+    db:
+        image: postgres
+        environment:
+            POSTGRES_USER: your_username
+            POSTGRES_PASSWORD: your_password
+            POSTGRES_DB: your_database
+        networks:
+            - mynetwork
+
+    admin:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: your_email@test.com
+            PGADMIN_DEFAULT_PASSWORD: your_password
+            PGADMIN_LISTEN_PORT: 5432
+        depends_on:
+            - db
+        networks:
+            - mynetwork
+        ports:
+            - 5432:5432
+
+networks:
+    mynetwork:
