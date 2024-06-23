@@ -16,7 +16,8 @@ if __name__ == "__main__":
 
     # Create the engine
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, db_name))
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format
+        (username, password, db_name))
 
     # Create all tables in the engine
     Base.metadata.create_all(engine)
