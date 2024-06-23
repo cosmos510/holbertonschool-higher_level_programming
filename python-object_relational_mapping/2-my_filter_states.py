@@ -13,13 +13,18 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=database)
 
     # Create a cursor object
     cursor = db.cursor()
 
     # Execute the SQL query
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    query = "SELECT * FROM states WHERE BINARY \
+            name = '{}' ORDER BY id ASC".format(state_name)
     cursor.execute(query)
 
     # Fetch all the rows and display the results
