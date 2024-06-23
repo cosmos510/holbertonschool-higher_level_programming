@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa
+Lists all states with a name starting with N (upper N)
+from the database hbtn_0e_0_usa
 """
 import sys
 import MySQLdb
@@ -12,7 +13,11 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=database)
 
     # Create a cursor object
     cursor = db.cursor()
