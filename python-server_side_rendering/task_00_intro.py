@@ -1,14 +1,17 @@
 def generate_invitations(template, attendees):
     """Generate invitations for attendees based on a template."""
     if not isinstance(template, str):
-        raise TypeError("template must be a string")
+        print("template must be a string")
+        return
     if not isinstance(attendees, list):
-        raise TypeError("attendees must be a list")
+        print("attendees must be a list")
+        return
     if template is None:
-        raise ValueError("Template is empty, no output files generated.")
+        print("Template is empty, no output files generated.")
+        return
     if not attendees:
-        raise ValueError("No data provided, no output files generated.")
-
+        print("No data provided, no output files generated.")
+        return
     for i, attendee in enumerate(attendees, start=1):
         invitation = template.format(**attendee)
         output_file = f"output_{i}.txt"
