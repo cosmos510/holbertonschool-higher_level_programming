@@ -12,12 +12,16 @@ def generate_invitations(template, attendees):
     if not attendees:
         print("No data provided, no output files generated.")
         return
+
+    class DefaultDict(dict):
+        def __missing__(self, key):
+            return 'N/A'
+
+        def __getitem__(self, key):
+            return dict.get(self, key, 'N/A') or 'N/A'
+
     for i, attendee in enumerate(attendees, start=1):
-        invitation = template.format(**attendee)
+        invitation = template.format_map(DefaultDict(attendee))
         output_file = f"output_{i}.txt"
         with open(output_file, "w") as file:
-            for key, value in attendee.items():
-                if value is None:
-                    value = "N/A"
-                invitation = invitation.replace("{" + key + "}", str(value))
             file.write(invitation)
