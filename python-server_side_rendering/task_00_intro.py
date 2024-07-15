@@ -6,7 +6,7 @@ def generate_invitations(template, attendees):
     if not isinstance(attendees, list):
         print("attendees must be a list")
         return
-    if template is None:
+    if not template:
         print("Template is empty, no output files generated.")
         return
     if not attendees:
